@@ -7,7 +7,7 @@ def max_subsequence_value(char_values, A, B, debug=False):
             if A[i] == B[j]:  # Chars match
                 dp[i][j] = dp[i + 1][j + 1] + char_values[A[i]]
             else:  # Chars dont match
-                dp[i][j] = max(dp[i + 1][j], dp[i][j + 1])
+                dp[i][j] = max(dp[i + 1][j], dp[i][j + 1], dp[i + 1][j + 1])
 
     if debug:  # DEBUG PARAM FOR PRINTING THE FILLED/COMPUTED GRID, USED WITH print_dp()
         return dp[0][0], dp
