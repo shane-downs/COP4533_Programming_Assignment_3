@@ -14,13 +14,13 @@ def max_subsequence_value(char_values, A, B, debug=False):
     else:
         return dp[0][0]
     
-def get_solution(dp, A, B): # Post-processing/backtracking to get solution subsequence
+def get_solution(dp, A, B, char_values): # Post-processing/backtracking to get solution subsequence
     i = 0
     j = 0
     res = ""
     while i < len(A) and j < len(B):
-        # Chars match, collect and move diagonally (no need to check either substring)
-        if A[i] == B[j]:
+        # Chars match and is selected by the algorithm, collect and move diagonally (no need to check either substring)
+        if A[i] == B[j] and dp[i][j] == dp[i + 1][j + 1] + char_values[A[i]]:
             res += A[i]
             i += 1
             j += 1

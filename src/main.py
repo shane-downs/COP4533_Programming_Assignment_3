@@ -27,12 +27,14 @@ if __name__ == "__main__":
         end = time.perf_counter()
         # print_dp(grid, A, B)
         print(res)
-        print(f"{get_solution(grid, A, B)} \n")
+        print(f"{get_solution(grid, A, B, char_values)}")
+        # Code to print time-elapsed
         # print(end-start)
+        print("\n")
         with open(f"../output/output_{i}.out", "w") as output_file:
             output_file.write(str(res))
             output_file.write("\n")
-            output_file.write(get_solution(grid, A, B))
+            output_file.write(get_solution(grid, A, B, char_values))
 
     # Code to run only one chosen file at a time
 #     file_name = "[enter the file name]"
@@ -44,6 +46,7 @@ if __name__ == "__main__":
 #     print()
 #     print(res)
 #     print(get_solution(grid, A, B))
+#     Code to print time-elapsed
 #     # print(end-start)
 #     with open(f"../output/{file_name}.out", "w") as output_file:
 #         output_file.write(str(res))

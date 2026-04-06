@@ -23,9 +23,9 @@ Which resulted in the huge differences in runtime
 Q2)
 ![IMG_1.jpeg](IMG_1.jpeg)
 
-Base Case: dp[i][j] = 0 if i = len(A)+1 or j = len(B)+1 <br>
+Base Case: dp[i][j] = 0 if i = len(A) or j = len(B) <br>
 
-In the case that the index of either i = len(A)+1 or j = len(B)+1, <br>
+In the case that the index of either i = len(A) or j = len(B), <br>
 this indicates that we've reached the end of the string thus 
 there will be no common subsequence leading to the value 
 being 0
@@ -41,24 +41,23 @@ can take its value and solve the subproblem of the next characters at
 i+1 and j+1
 2. When A[i] != B[j]: <br>
 If the characters do not match then we solve the 
-subproblems of th 3 situations possible:
+subproblems of the 2 situations possible:
    1. subproblem(i, j+1)
    2. subproblem(i+1, j)
-   3. subproblem(i+1, j+1) <br>
 
-    We then take the maxes of these 3 cases giving us the HVLCS
+    We then take the maxes of these 2 cases giving us the HVLCS
 
-
+Q3) 
 Pseudocode:
 
-Input: DP<sub>11</sub>, ..., DP<sub>mn</sub> A<sub>1</sub>, ..., A<sub>m</sub> B<sub>1</sub>, ..., B<sub>n</sub>
+Input: DP<sub>11</sub>, ..., DP<sub>mn</sub> A<sub>1</sub>, ..., A<sub>m</sub> B<sub>1</sub>, ..., B<sub>n</sub> V<sub>1</sub>, ..., V<sub>k</sub>
 
 i = 0<br>
 j = 0<br>
 result = ""<br>
 while i < len(A) and j < len(B):
 
-&nbsp;&nbsp;&nbsp;&nbsp; if A<sub>i</sub> == B<sub>j</sub>:<br>
+&nbsp;&nbsp;&nbsp;&nbsp; if A<sub>i</sub> == B<sub>j</sub> & dp<sub>ij</sub> = dp<sub>i+1 j+1</sub> + V<sub>i/j</sub:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; result += A<sub>i</sub> or B<sub>j</sub><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i += 1<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; j += 1<br>
