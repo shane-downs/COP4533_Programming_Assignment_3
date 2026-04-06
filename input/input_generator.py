@@ -9,8 +9,8 @@ for file_num in range(1, 11):
         letter2 = ""
         value_dict = {}
         chosen_numbers = []
-        a_size = random.randint(25, 30)
-        b_size = random.randint(25, 30)
+        a_size = random.randint(25, 50)
+        b_size = random.randint(25, 50)
         for i in range(a_size):
             letter1 += random.choice(string.ascii_lowercase)
             if letter1[-1] not in value_dict:
