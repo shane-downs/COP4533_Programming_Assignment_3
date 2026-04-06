@@ -21,7 +21,7 @@ The input strings A and B can range anywhere from 25 to 50.
 Which resulted in the huge differences in runtime
 
 Q2)
-![IMG_1.jpeg](IMG_1.jpeg)
+![IMG_1.jpg](IMG_1.JPG)
 
 Base Case: dp[i][j] = 0 if i = len(A) or j = len(B) <br>
 
